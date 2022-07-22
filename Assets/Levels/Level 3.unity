@@ -18510,25 +18510,15 @@ Tilemap:
       m_TileObjectToInstantiateIndex: 65535
       dummyAlignment: 0
       m_AllTileFlags: 1073741825
-  - first: {x: 15, y: 11, z: 0}
-    second:
-      serializedVersion: 2
-      m_TileIndex: 0
-      m_TileSpriteIndex: 0
-      m_TileMatrixIndex: 0
-      m_TileColorIndex: 0
-      m_TileObjectToInstantiateIndex: 65535
-      dummyAlignment: 0
-      m_AllTileFlags: 1073741825
   m_AnimatedTiles: {}
   m_TileAssetArray:
-  - m_RefCount: 4
+  - m_RefCount: 3
     m_Data: {fileID: 11400000, guid: 6f77a654f8a3e664e9b11bb60993e258, type: 2}
   m_TileSpriteArray:
-  - m_RefCount: 4
+  - m_RefCount: 3
     m_Data: {fileID: 21300000, guid: 1aa553739d26ea746aad07e31f50b79b, type: 3}
   m_TileMatrixArray:
-  - m_RefCount: 4
+  - m_RefCount: 3
     m_Data:
       e00: 1
       e01: 0
@@ -18547,7 +18537,7 @@ Tilemap:
       e32: 0
       e33: 1
   m_TileColorArray:
-  - m_RefCount: 4
+  - m_RefCount: 3
     m_Data: {r: 1, g: 1, b: 1, a: 1}
   m_TileObjectToInstantiateArray: []
   m_AnimationFrameRate: 1
@@ -29997,7 +29987,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2733047239370465296, guid: f23ba8827ad620148b06cba69894af20, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2733047239370465297, guid: f23ba8827ad620148b06cba69894af20, type: 3}
       propertyPath: m_RootOrder
@@ -30220,11 +30210,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6633310770004448180, guid: 0e34e1857467f5b4daa490ba7bca8ccb, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -17.408875
+      value: -17.10659
       objectReference: {fileID: 0}
     - target: {fileID: 6633310770004448180, guid: 0e34e1857467f5b4daa490ba7bca8ccb, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -3.0739326
+      value: -3.0765724
       objectReference: {fileID: 0}
     - target: {fileID: 6633310770650502393, guid: 0e34e1857467f5b4daa490ba7bca8ccb, type: 3}
       propertyPath: m_BoundingShape2D
