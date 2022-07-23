@@ -7,5 +7,5 @@ The goal of the game is to get past 3 levels that rise in difficulty. You want t
 
 ## How to Play
 
-Here is a link to the game published on itch.io!
-https://coastercrook.itch.io/garretts-tilevania-adventure
+Here is a link to the game published on simmer.io!
+https://simmer.io/@CoasterCrook/garrett-s-tilevania-adventure
