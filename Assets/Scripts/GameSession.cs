@@ -12,10 +12,13 @@ public class GameSession : MonoBehaviour
     
     [SerializeField] TextMeshProUGUI livesText;
     [SerializeField] TextMeshProUGUI scoreText;
+    [SerializeField] TextMeshProUGUI timeText;
     [SerializeField] TextMeshProUGUI deathScoreText;
     [SerializeField] float deathDelay = 1f;
 
     public GameObject deathScreen;
+    public bool startingStopWatch = false;
+    float currentTime;
     
     void Awake()
     {
@@ -35,6 +38,18 @@ public class GameSession : MonoBehaviour
         livesText.text = playerLives.ToString();
         scoreText.text = score.ToString();
         deathScreen.SetActive(false);
+        currentTime = 0;
+        startingStopWatch = true;
+    }
+
+    void Update() 
+    {
+        if (startingStopWatch == true)
+        {
+            currentTime = currentTime + Time.deltaTime;
+        }
+        TimeSpan time = TimeSpan.FromSeconds(currentTime);
+        timeText.text = time.Minutes.ToString() + ":" + time.Seconds.ToString("00") + "." + time.Milliseconds.ToString("00");
     }
     
 
@@ -79,5 +94,15 @@ public class GameSession : MonoBehaviour
         FindObjectOfType<ScenePersist>().ResetScenePersist();
         SceneManager.LoadScene(0);
         Destroy(gameObject);
+    }
+
+    public void StartStopWatch()
+    {
+        startingStopWatch = true;
+    }
+
+    public void StopStopWatch ()
+    {
+        startingStopWatch = false;
     }
 }
