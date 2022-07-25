@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using TMPro;
+using System;
 
 public class PauseMenu : MonoBehaviour
 {
@@ -11,6 +12,7 @@ public class PauseMenu : MonoBehaviour
     public static bool isPaused;
     [SerializeField] AudioSource gameMusic;
     [SerializeField] TextMeshProUGUI endScoreText;
+    [SerializeField] TextMeshProUGUI timerText;
     
     void Start()
     {
@@ -23,7 +25,7 @@ public class PauseMenu : MonoBehaviour
     {
         int currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
         
-        if (Input.GetKeyDown(KeyCode.Escape))
+        if (Input.GetKeyDown(KeyCode.Q))
         {
             if (isPaused)
             {
@@ -34,10 +36,15 @@ public class PauseMenu : MonoBehaviour
                 PauseGame();
             }
         }
+        
         if(currentSceneIndex == 4)
         {
+            TimeSpan time = TimeSpan.FromSeconds(GetComponent<GameSession>().currentTime);
+            timerText.text = "Time: " + time.Minutes.ToString() + ":" + time.Seconds.ToString("00") + "." + time.Milliseconds.ToString();
+            FindObjectOfType<GameSession>().StopStopWatch();
             endScreen.SetActive(true);
             endScoreText.text = "You Scored\n" + GetComponent<GameSession>().score + " / 3000 Points!";
+            
         }
     }
 
@@ -76,6 +83,14 @@ public class PauseMenu : MonoBehaviour
     {
         FindObjectOfType<ScenePersist>().ResetScenePersist();
         SceneManager.LoadScene(1);
+        Destroy(gameObject);
+    } 
+
+    public void RestartGameTwo()
+    {
+        FindObjectOfType<ScenePersist>().ResetScenePersist();
+        SceneManager.LoadScene(1);
+        ResumeGame();
         Destroy(gameObject);
     } 
 }

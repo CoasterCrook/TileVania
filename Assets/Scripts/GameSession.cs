@@ -7,7 +7,7 @@ using TMPro;
 
 public class GameSession : MonoBehaviour
 {
-    [SerializeField] int playerLives = 3;
+    [SerializeField] public int playerLives = 3;
     [SerializeField] public int score = 0;
     
     [SerializeField] TextMeshProUGUI livesText;
@@ -18,7 +18,7 @@ public class GameSession : MonoBehaviour
 
     public GameObject deathScreen;
     public bool startingStopWatch = false;
-    float currentTime;
+    public float currentTime;
     
     void Awake()
     {
@@ -48,8 +48,9 @@ public class GameSession : MonoBehaviour
         {
             currentTime = currentTime + Time.deltaTime;
         }
+        
         TimeSpan time = TimeSpan.FromSeconds(currentTime);
-        timeText.text = time.Minutes.ToString() + ":" + time.Seconds.ToString("00") + "." + time.Milliseconds.ToString("00");
+        timeText.text = time.Minutes.ToString() + ":" + time.Seconds.ToString("00") + "." + time.Milliseconds.ToString();
     }
     
 
@@ -64,6 +65,7 @@ public class GameSession : MonoBehaviour
         {
             TakeLastLife();
             yield return new WaitForSecondsRealtime(deathDelay);
+            StopStopWatch();
             deathScreen.SetActive(true);
             deathScoreText.text = "You Got " + GetComponent<GameSession>().score + " Points";
         }
